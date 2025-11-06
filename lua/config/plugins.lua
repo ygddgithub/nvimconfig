@@ -13,25 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-   -- Vue 语法高亮
-   {
-    "posva/vim-vue",
-    ft = "vue",
-    config = function()
-      vim.g.vue_pre_processors = "detect_on_enter"
-      -- 设置Vue文件的缩进
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "vue",
-        callback = function()
-          vim.bo.tabstop = 2
-          vim.bo.shiftwidth = 2
-          vim.bo.softtabstop = 2
-          vim.bo.expandtab = true
-        end
-      })
-    end
-  },
-
   -- 颜色主题
   {
     "folke/tokyonight.nvim",
